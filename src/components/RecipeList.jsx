@@ -14,14 +14,11 @@ const RecipeList = () => {
     dispatch(fetchRecipes(""));
   }, [dispatch]);
 
-  // Handle search form submission.
-  // If the search query is empty, this will re-fetch the default list.
   const handleSearch = (e) => {
     e.preventDefault();
     dispatch(fetchRecipes(searchQuery));
   };
 
-  // Add recipe to favorites and show a popup notification.
   const handleAddFavorite = (recipe) => {
     dispatch(addFavorite(recipe));
     setShowPopup(true);
